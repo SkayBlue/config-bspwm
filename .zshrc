@@ -85,6 +85,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+funcion de borrado avanzado
 function rmk(){
 	scrub -p dod $1
 	shred -zun 10 -v $1
