@@ -31,7 +31,7 @@ bspc config focus_follows_pointer true
 
 #fundo de pantalla
 
-feh --bg-fill /home/skay/Imágenes/fundos/1145320.png
+feh --bg-fill ~/Imágenes/fundos/1145320.png
 
 #polybar con el tema forest
 #~/.config/polybar/launch.sh --forest
