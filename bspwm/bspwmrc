@@ -31,7 +31,7 @@ bspc config focus_follows_pointer true
 
 #fundo de pantalla
 
-feh --bg-fill ~/Imágenes/fundos/1145320.png
+feh --bg-fill ~/Imágenes/fondos/1145320.png
 
 #polybar con el tema forest
 #~/.config/polybar/launch.sh --forest
@@ -43,4 +43,4 @@ picom --experimental-backends &
 bspc config border_width 2
 
 #scripts de python
-~/.config/pythonScripts/InicioAutomatico.py
+#~/.config/pythonScripts/InicioAutomatico.py
