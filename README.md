@@ -211,7 +211,8 @@ actualizamos y instalamos las cosas que necesita antes de continuar con la insta
 
 teniendo todo listo, nos clonamos el repositorio.
 
-		git clone https://github.com/ibhagwan/picom.git
+	git clone https://github.com/ibhagwan/picom.git
+		
 una vez clonado necesitamos compilarlo, para eso nos metemos dentro de la carpeta 
 
 	cd picom/
@@ -323,7 +324,7 @@ Para definir los monitores primero tenemos que saber cuales están conectados y 
  
  Una vez teniendo el nombre de los monitores entraremos al archivo **config.ini** que se encuentra en la carpeta de de **forest**.
 
-		cd && nano ~/.config/polybar/forest/config.ini
+	cd && nano ~/.config/polybar/forest/config.ini
 
 Estando dentro toca buscar el apartado **[bar/dos]** y editaremos la parte donde dice **monitor**, toma en cuenta que **[bar/dos]** es el monitor secundario. 
 
