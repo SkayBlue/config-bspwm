@@ -131,7 +131,7 @@ de manera opcional nos podemos descargar ranger , este cumple las funciones de c
 
 ## instalación de bspwn y sxhkd
 
->Los pasos de instalación se encuentran en la wiki de [bspwm](https://github.com/baskerville/bspwm/wiki) recuerda consultarla antes.
+>Los pasos de instalación pudieron cambiar, reucerda consultar la wilki de [bspwm](https://github.com/baskerville/bspwm/wiki) para prevenir errores.
 
  Primero instalaremos los paquetes requeridos de bspwm
 
