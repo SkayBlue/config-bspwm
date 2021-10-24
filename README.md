@@ -83,7 +83,7 @@ Instalaremos primero [bat](https://github.com/sharkdp/bat/releases), este toma l
 
 para instalarlo ejecutamos lo siguiente.   
   
-	  sudo dpkg -i nombreDelArchivo.deb
+	sudo dpkg -i nombreDelArchivo.deb
 y con esto tendríamos instalado bat y listo para funcionar, hay dos formas de usarlo, llamándolo como bat en consola y poniéndolo como alias en zrhrc para llamarlo cuando pongamos cat.
 
 ----
@@ -94,7 +94,7 @@ Lo siguiente que instalaremos sera [lsd](https://github.com/Peltoche/lsd/release
 
 para instalarlo ejecutamos lo siguiente.   
   
-	  sudo dpkg -i nombreDelArchivo.deb
+	sudo dpkg -i nombreDelArchivo.deb
 al igual que con bat, con lsd podremos llamarlo asi o poniendo un alias en la zshrc para ligarlo a nuestro ls.
 
 ---
