@@ -174,13 +174,13 @@ ejecutamos lo siguiente para darle permisos de ejecución.
 
 algo que hay que configurar son los monitores y las ventanas, con el siguiente comando sabemos los monitores conectados y sus nombres
 		
-		xrandr -q | grep " connected" | cut -d ' ' -f1
+	xrandr -q | grep " connected" | cut -d ' ' -f1
 
 sabiendo los nombres entramos al archivo bspwmrc.
 	
-		nano bspwmrc
+	nano bspwmrc
 
-y ahora donde dice **#monitores y configuración** editamos los hombres para coincidir con los nombres de nuestros monitores. 
+y ahora donde dice **#monitores y configuración** editamos los nombres para coincidir con los nombres de nuestros monitores. 
 
 	bspc monitor EditaAqui_1 -n monitor0 -d 1 2 3 4 
 	bspc monitor EditaAqui_2 -n monitor1 -d 6 7 8 9
