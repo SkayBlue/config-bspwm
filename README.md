@@ -75,7 +75,7 @@ Terminado la instalación en todos los usuarios procederemos a definir la zsh co
 
 ahora formaremos un enlace simbólico para no tener que editar dos **zshrc** (archivo de configuración de la zsh). Lo que haremos sera usar el archivo de configuración de nuestro usuario normal y compartirlo con root para que los dos compartan los plugins que instalemos a futuro.
 
-	sudo su ln -s -f /home/usuario/.zshrc .zshrc
+	sudo ln -s -f /home/usuario/.zshrc .zshrc
 	
 > configuración de zshrc [aqui](https://github.com/SkayBlue/config-bspwm/blob/main/.zshrc)
 
