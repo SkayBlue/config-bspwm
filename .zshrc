@@ -1,27 +1,39 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# Fix the Java Problem
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Prompt
 PROMPT="%F{red}┌[%f%F{cyan}%m%f%F{red}]─[%f%F{yellow}%D{%H:%M-%d/%m}%f%F{red}]─[%f%F{magenta}%d%f%F{red}]%f"$'\n'"%F{red}└╼%f%F{green}$USER%f%F{yellow}$%f"
 # Export PATH$
 export PATH=~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:$PATH
 
+
+function hex-encode()
+{
+  echo "$@" | xxd -p
+}
+
+function hex-decode()
+{
+  echo "$@" | xxd -p -r
+}
+
+function rot13()
+{
+  echo "$@" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+}
+
 # alias
 alias ls='lsd'
+alias cat='/bin/bat --paging=never'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias cat='/bin/bat --paging=never'
 #####################################################
 # Auto completion / suggestion
 # Mixing zsh-autocomplete and zsh-autosuggestions
@@ -59,56 +71,28 @@ echo -en "\e]2;Terminal\a"
 preexec () { print -Pn "\e]0;$1 - Terminal\a" }
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#plugis mios
+function mkt(){
+	mkdir {nmap,content,exploits,scripts}
+}
+#funcion de borrado avanzado
 
-source /usr/share/zsh-plugins/sudo.plugin.zsh
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/skay/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/skay/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/skay/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/skay/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-funcion de borrado avanzado
 function rmk(){
 	scrub -p dod $1
 	shred -zun 10 -v $1
 }
 
-function mkt(){
-	mkdir {nmap,content,exploits,scripts}
+function settarget(){
+    ip_address=$1
+
+    echo "$ip_address" > /home/skya/.config/bin/target
 }
 
-# Extract nmap information
-function extractPorts(){
-	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
-	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
-	echo $ports | tr -d '\n' | xclip -sel clip
-	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
-	cat extractPorts.tmp; rm extractPorts.tmp
-}
 # fzf improvement
 function fzf-lovely(){
 
@@ -130,4 +114,16 @@ function fzf-lovely(){
 	                          rougify {} ||
 	                          cat {}) 2> /dev/null | head -500'
 	fi
+}
+
+# Extract nmap information
+function extractPorts(){
+	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
+	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
+	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
+	echo $ports | tr -d '\n' | xclip -sel clip
+	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
+	cat extractPorts.tmp; rm extractPorts.tmp
 }
