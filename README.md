@@ -226,7 +226,7 @@ actualizamos y instalamos las cosas que necesita antes de continuar con la insta
 
 teniendo todo listo, nos clonamos el repositorio.  
 
-git clone https://github.com/ibhagwan/picom.git
+	git clone https://github.com/ibhagwan/picom.git
 
 una vez clonado necesitamos compilarlo, para eso nos metemos dentro de la carpeta
 
