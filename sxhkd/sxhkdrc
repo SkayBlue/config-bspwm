@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	gnome-terminal
+	kitty
 
 # program launcher
 super + d
@@ -127,7 +127,7 @@ super + ctrl + {Left,Down,Up,Right}
 
 # Custom move/resize
 alt + super + {Left,Down,Up,Right}
-    /home/skay/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+       ~/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
 
 #brave navegador
 

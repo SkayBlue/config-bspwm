@@ -41,6 +41,3 @@ feh --bg-fill ~/Imágenes/fondos/1145320.png
 #lanzamiento de picom, esto nos pone la trasparencia
 picom --experimental-backends &
 bspc config border_width 2
-
-#scripts de python
-#~/.config/pythonScripts/InicioAutomatico.py
